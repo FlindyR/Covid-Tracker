@@ -1,0 +1,20 @@
+.body {
+    display:'flex';
+    flex: 1; 
+    flex-direction: column;
+  }
+  
+  .container {
+    display: flex;
+    flex: 1;
+    margin-bottom: 1em;
+  }
+  
+  .box1 {
+    height: 9em;
+    width: 9em;
+    border: 0.5em white solid;
+    border-radius: 20px;
+    background-color: dimgray;
+    text-align: center;
+  }
