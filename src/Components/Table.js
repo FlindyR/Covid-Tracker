@@ -18,7 +18,7 @@ const Table = ({provin}) => {
     } = tableInstance
 
     return (
-        <table {...getTableProps()}>
+        <table {...getTableProps()} id="customers">
             <thead>
                 {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
@@ -34,7 +34,6 @@ const Table = ({provin}) => {
                     return (
                         <tr {...row.getRowProps()} >
                             {row.cells.map((cell) => {
-                                console.log(cell.data)
                                 return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                             })}
                         </tr>
