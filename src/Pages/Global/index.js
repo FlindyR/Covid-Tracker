@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import "../Pages.css"
 import axios from "axios"
-import NumberFormat from 'react-number-format';
+import Box from '../../Components/Box';
 
 const Global = () => {
     const [dunia, setDunia] = useState({
@@ -20,23 +19,14 @@ const Global = () => {
                 }))
     }, [])
     return (
-      <div>
-            <h1>Global</h1>
-            <div className='container'>
-                <span className='box'>
-                    <h2 style={{color: 'yellow'}}>Positif</h2>
-                    <NumberFormat value={dunia.Positif} displayType={'text'} thousandSeparator={true} renderText={value => <div style={{color: 'yellow'}}>{value}</div>} />
-                </span>
-                <span className='box'>
-                    <h2 style={{color: 'greenyellow'}}>Sembuh</h2>
-                    <NumberFormat value={dunia.Sembuh} displayType={'text'} thousandSeparator={true} renderText={value => <div style={{color: 'greenyellow'}}>{value}</div>} />
-                </span>
-                <span className='box'>
-                    <h2 style={{color: 'red'}}>Meninggal</h2>
-                    <NumberFormat value={dunia.Meninggal} displayType={'text'} thousandSeparator={true} renderText={value => <div style={{color: 'red'}}>{value}</div>} />
-                </span>
-            </div>
-        </div>
+        <>
+            <Box
+                title= "Global"
+                confirm= {dunia.Positif}
+                recover= {dunia.Sembuh}
+                death= {dunia.Meninggal}
+            />
+        </>
     )
 }
 
